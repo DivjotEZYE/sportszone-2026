@@ -1,60 +1,61 @@
+import { Link } from "react-router-dom";
 import tennisImg from "@/assets/service-tennis.jpg";
 import hardcourtImg from "@/assets/service-hardcourt.jpg";
 import educationImg from "@/assets/service-education.jpg";
 import bowlingImg from "@/assets/service-bowling.jpg";
 import residentialImg from "@/assets/service-residential.jpg";
 import majorImg from "@/assets/service-major.jpg";
-import { ArrowUpRight } from "lucide-react";
 
 const services = [
-  { title: "Tennis Courts", description: "Construction, resurfacing and design for private and club courts across Greater Sydney and beyond.", image: tennisImg },
-  { title: "Hard Courts", description: "Rebound Ace acrylic surfacing systems customised for performance, playability and appearance.", image: hardcourtImg },
-  { title: "Education", description: "Safe, low-maintenance synthetic surfaces for schools and universities.", image: educationImg },
-  { title: "Bowling Greens", description: "Dry Max Pro and Masters Pro — the first and only choice for synthetic bowling greens.", image: bowlingImg },
-  { title: "Residential Turf", description: "Premium synthetic turf supply and installation for homes and gardens.", image: residentialImg },
-  { title: "Major Projects", description: "From Olympic venues to community sports complexes — we deliver at every scale.", image: majorImg },
+  { slug: "tennis-courts", title: "Tennis Courts", description: "New builds, resurfacing and repairs for private and club courts.", image: tennisImg },
+  { slug: "hard-courts", title: "Hard Courts", description: "Rebound Ace acrylic systems for netball, basketball and multi-sport.", image: hardcourtImg },
+  { slug: "education", title: "Schools & Education", description: "Synthetic surfaces and playgrounds for schools and universities.", image: educationImg },
+  { slug: "bowling-greens", title: "Bowling Greens", description: "Dry Max Pro and Masters Pro synthetic bowling green installations.", image: bowlingImg },
+  { slug: "residential-turf", title: "Residential Turf", description: "Synthetic turf for backyards, gardens and pet areas.", image: residentialImg },
+  { slug: "major-projects", title: "Major Projects", description: "Large-scale sports complexes, council projects and commercial builds.", image: majorImg },
 ];
+
+export { services };
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 bg-background">
+    <section id="services" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="text-sm font-medium text-primary uppercase tracking-widest">What We Do</span>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mt-3">
-            Our Services
+        <div className="mb-12">
+          <h2 className="text-2xl md:text-4xl font-heading font-bold text-foreground">
+            What We Do
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">
-            From backyard courts to Olympic-grade facilities — we build sports surfaces that last.
+          <p className="text-muted-foreground mt-2 max-w-lg">
+            We build and resurface sports courts and synthetic turf areas across Australia.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => (
-            <div
-              key={service.title}
-              className="group relative rounded-xl overflow-hidden card-shadow hover:card-shadow-hover transition-all duration-500 bg-card border border-border opacity-0 animate-fade-up"
-              style={{ animationDelay: `${0.1 * i}s` }}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {services.map((service) => (
+            <Link
+              key={service.slug}
+              to={`/services/${service.slug}`}
+              className="group block rounded-lg overflow-hidden bg-card border border-border hover:border-primary/30 transition-colors"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[16/10] overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                 />
               </div>
-              <div className="p-6">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-heading font-semibold text-card-foreground">
-                    {service.title}
-                  </h3>
-                  <ArrowUpRight className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+              <div className="p-5">
+                <h3 className="text-lg font-heading font-semibold text-card-foreground">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground mt-1 text-sm">
                   {service.description}
                 </p>
+                <span className="inline-block mt-3 text-sm font-medium text-primary">
+                  Learn more →
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
