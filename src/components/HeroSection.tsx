@@ -35,6 +35,11 @@ const HeroSection = () => {
             <a
               href="#contact"
               className="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-8 py-4 rounded-lg font-heading font-semibold text-lg hover:opacity-90 transition-all gold-glow"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                setTimeout(() => document.querySelector<HTMLInputElement>('#contact input[name="name"]')?.focus(), 600);
+              }}
             >
               Get a Free Quote
               <ArrowRight className="w-5 h-5" />
