@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/sportszone-logo-white.png";
 
 const ContactFooter = () => {
   return (
@@ -42,13 +43,9 @@ const ContactFooter = () => {
       <footer className="bg-foreground py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-heading font-bold text-lg">SZ</span>
-              </div>
-              <div>
-                <span className="font-heading font-bold text-background">Sportszone Group</span>
-              </div>
+            <div className="flex items-center gap-2">
+              <img src={logo} alt="Sportszone Group" className="h-10 w-auto" />
+              <span className="font-heading font-bold text-background">Sportszone Group</span>
             </div>
             <div className="flex items-center gap-2 text-background/60 text-sm">
               <MapPin className="w-4 h-4" />
