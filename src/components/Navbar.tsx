@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import logo from "@/assets/sportszone-logo-white.png";
 
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
+  { label: "Gallery", href: "#gallery" },
   { label: "About", href: "#about" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
@@ -28,10 +30,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
-        <a href="#home" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-heading font-bold text-lg">SZ</span>
-          </div>
+        <a href="#home" className="flex items-center gap-2">
+          <img src={logo} alt="Sportszone Group" className="h-12 w-auto" />
           <div>
             <span className={`font-heading font-bold text-lg leading-tight block ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
               Sportszone
