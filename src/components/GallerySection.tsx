@@ -1,33 +1,37 @@
 import { useState } from "react";
-import galleryBowling from "@/assets/gallery-bowling.jpg";
-import galleryHardcourt from "@/assets/gallery-hardcourt.jpg";
-import galleryResidential from "@/assets/gallery-residential.jpg";
-import galleryTennis from "@/assets/gallery-tennis2.jpg";
-import gallerySportsfield from "@/assets/gallery-sportsfield.jpg";
-import galleryResurfacing from "@/assets/gallery-resurfacing.jpg";
-import tennisImg from "@/assets/service-tennis.jpg";
-import bowlingImg from "@/assets/service-bowling.jpg";
-import residentialImg from "@/assets/service-residential.jpg";
-import majorImg from "@/assets/service-major.jpg";
-import hardcourtImg from "@/assets/service-hardcourt.jpg";
-import educationImg from "@/assets/service-education.jpg";
+import tennisReal1 from "@/assets/gallery-tennis-real1.jpg";
+import tennisReal2 from "@/assets/gallery-tennis-real2.jpg";
+import tennisReal3 from "@/assets/gallery-tennis-real3.jpg";
+import bowlingReal1 from "@/assets/gallery-bowling-real1.jpg";
+import bowlingReal2 from "@/assets/gallery-bowling-real2.jpg";
+import hardcourtReal1 from "@/assets/gallery-hardcourt-real1.jpg";
+import hardcourtReal2 from "@/assets/gallery-hardcourt-real2.jpg";
+import hardcourtReal3 from "@/assets/gallery-hardcourt-real3.jpg";
+import residentialReal1 from "@/assets/gallery-residential-real1.jpg";
+import residentialReal2 from "@/assets/gallery-residential-real2.jpg";
+import sportsfieldReal1 from "@/assets/gallery-sportsfield-real1.jpg";
+import sportsfieldReal2 from "@/assets/gallery-sportsfield-real2.jpg";
+import resurfacingReal1 from "@/assets/gallery-resurfacing-real1.jpg";
+import resurfacingReal2 from "@/assets/gallery-resurfacing-real2.jpg";
 
-const categories = ["All", "Tennis", "Hard Courts", "Bowling", "Residential", "Sports Fields"] as const;
+const categories = ["All", "Tennis", "Hard Courts", "Bowling", "Residential", "Sports Fields", "Resurfacing"] as const;
 type Category = (typeof categories)[number];
 
 const projects = [
-  { image: tennisImg, category: "Tennis" as Category, title: "Private court — North Shore" },
-  { image: galleryHardcourt, category: "Hard Courts" as Category, title: "Multi-sport court — school campus" },
-  { image: galleryBowling, category: "Bowling" as Category, title: "Synthetic green — club install" },
-  { image: galleryResidential, category: "Residential" as Category, title: "Backyard turf — Inner West" },
-  { image: gallerySportsfield, category: "Sports Fields" as Category, title: "Football pitch — community complex" },
-  { image: galleryResurfacing, category: "Tennis" as Category, title: "Court resurfacing" },
-  { image: galleryTennis, category: "Tennis" as Category, title: "Club court — synthetic surface" },
-  { image: hardcourtImg, category: "Hard Courts" as Category, title: "Acrylic court — Rebound Ace" },
-  { image: bowlingImg, category: "Bowling" as Category, title: "Bowling green upgrade" },
-  { image: residentialImg, category: "Residential" as Category, title: "Pet-friendly turf" },
-  { image: majorImg, category: "Sports Fields" as Category, title: "Multi-field complex" },
-  { image: educationImg, category: "Sports Fields" as Category, title: "School playground surface" },
+  { image: tennisReal1, category: "Tennis" as Category, title: "Synthetic grass tennis court" },
+  { image: tennisReal2, category: "Tennis" as Category, title: "Club court installation" },
+  { image: tennisReal3, category: "Tennis" as Category, title: "Private court build" },
+  { image: hardcourtReal1, category: "Hard Courts" as Category, title: "Half court — acrylic surface" },
+  { image: hardcourtReal2, category: "Hard Courts" as Category, title: "Multi-sport court — Aussie blue" },
+  { image: hardcourtReal3, category: "Hard Courts" as Category, title: "Basketball hardcourt" },
+  { image: bowlingReal1, category: "Bowling" as Category, title: "Synthetic bowling green" },
+  { image: bowlingReal2, category: "Bowling" as Category, title: "Club bowling green install" },
+  { image: residentialReal1, category: "Residential" as Category, title: "Backyard turf installation" },
+  { image: residentialReal2, category: "Residential" as Category, title: "Residential synthetic lawn" },
+  { image: sportsfieldReal1, category: "Sports Fields" as Category, title: "Aerial — sports field complex" },
+  { image: sportsfieldReal2, category: "Sports Fields" as Category, title: "Allianz Stadium project" },
+  { image: resurfacingReal1, category: "Resurfacing" as Category, title: "Court resurfacing in progress" },
+  { image: resurfacingReal2, category: "Resurfacing" as Category, title: "Surface restoration" },
 ];
 
 const GallerySection = () => {
@@ -43,7 +47,7 @@ const GallerySection = () => {
             Recent Projects
           </h2>
           <p className="text-muted-foreground mt-2">
-            A selection of our completed work.
+            Real work from real sites — across Australia.
           </p>
         </div>
 

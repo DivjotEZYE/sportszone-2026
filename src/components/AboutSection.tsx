@@ -1,4 +1,5 @@
 import { CheckCircle } from "lucide-react";
+import founderImg from "@/assets/founder-craig.jpg";
 
 const highlights = [
   "Sydney 2000 Olympics — triathlon track & hockey pitch",
@@ -34,22 +35,42 @@ const AboutSection = () => {
               Get in Touch
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-primary rounded-xl p-6 text-primary-foreground">
-              <div className="text-4xl font-heading font-bold">25+</div>
-              <div className="text-primary-foreground/70 text-sm mt-1">Years in Business</div>
+
+          <div className="space-y-6">
+            {/* Founder photo */}
+            <div className="flex items-center gap-5">
+              <img
+                src={founderImg}
+                alt="Craig — Founder of Sportszone Group"
+                className="w-28 h-36 object-cover rounded-lg"
+              />
+              <div>
+                <div className="font-heading font-bold text-foreground text-lg">Craig</div>
+                <div className="text-muted-foreground text-sm">Founder & Director</div>
+                <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                  Over 25 years building sports surfaces — from backyard courts to Olympic venues.
+                </p>
+              </div>
             </div>
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <div className="text-4xl font-heading font-bold text-foreground">2,000+</div>
-              <div className="text-muted-foreground text-sm mt-1">Projects Completed</div>
-            </div>
-            <div className="bg-secondary rounded-xl p-6">
-              <div className="text-4xl font-heading font-bold text-secondary-foreground">4.9★</div>
-              <div className="text-secondary-foreground/70 text-sm mt-1">Google Rating</div>
-            </div>
-            <div className="bg-accent rounded-xl p-6 border border-border">
-              <div className="text-4xl font-heading font-bold text-accent-foreground">AUS</div>
-              <div className="text-muted-foreground text-sm mt-1">Nationwide Service</div>
+
+            {/* Stats grid */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-primary rounded-xl p-6 text-primary-foreground">
+                <div className="text-4xl font-heading font-bold">25+</div>
+                <div className="text-primary-foreground/70 text-sm mt-1">Years in Business</div>
+              </div>
+              <div className="bg-card rounded-xl p-6 border border-border">
+                <div className="text-4xl font-heading font-bold text-foreground">2,000+</div>
+                <div className="text-muted-foreground text-sm mt-1">Projects Completed</div>
+              </div>
+              <div className="bg-secondary rounded-xl p-6">
+                <div className="text-4xl font-heading font-bold text-secondary-foreground">4.9★</div>
+                <div className="text-secondary-foreground/70 text-sm mt-1">Google Rating</div>
+              </div>
+              <div className="bg-accent rounded-xl p-6 border border-border">
+                <div className="text-4xl font-heading font-bold text-accent-foreground">AUS</div>
+                <div className="text-muted-foreground text-sm mt-1">Nationwide Service</div>
+              </div>
             </div>
           </div>
         </div>
