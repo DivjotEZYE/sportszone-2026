@@ -139,8 +139,24 @@ const Navbar = () => {
               )
             )}
             <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+                if (isHome) {
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                  setTimeout(() => document.querySelector<HTMLInputElement>('#contact input[name="name"]')?.focus(), 600);
+                } else {
+                  window.location.href = "/#contact";
+                }
+              }}
+              className="flex items-center justify-center bg-secondary text-secondary-foreground px-4 py-3 rounded-lg font-heading font-semibold"
+            >
+              Get a Free Quote
+            </a>
+            <a
               href="tel:1300302398"
-              className="flex items-center gap-2 bg-secondary text-secondary-foreground px-4 py-3 rounded-lg font-medium justify-center"
+              className="flex items-center gap-2 text-foreground px-4 py-3 rounded-lg font-medium justify-center border border-border"
             >
               <Phone className="w-4 h-4" />
               1300 302 398
