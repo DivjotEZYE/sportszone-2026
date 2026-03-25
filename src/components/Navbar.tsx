@@ -97,7 +97,7 @@ const Navbar = () => {
                 window.location.href = "/#contact";
               }
             }}
-            className="bg-secondary text-secondary-foreground px-5 py-2 rounded-lg font-heading font-semibold text-sm hover:opacity-90 transition-opacity"
+            className="bg-secondary text-secondary-foreground px-5 py-2 rounded-lg font-heading font-semibold text-sm hover:scale-105 hover:shadow-lg transition-all duration-200 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite] shadow-[0_0_15px_hsla(45,80%,55%,0.4)]"
           >
             Get a Free Quote
           </a>
