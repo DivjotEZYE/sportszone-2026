@@ -81,10 +81,25 @@ const Navbar = () => {
           )}
           <a
             href="tel:1300302398"
-            className="flex items-center gap-2 bg-secondary text-secondary-foreground px-4 py-2 rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
+            className={`flex items-center gap-2 text-sm font-medium transition-colors ${scrolled || !isHome ? "text-foreground hover:text-primary" : "text-primary-foreground/90 hover:text-primary-foreground"}`}
           >
             <Phone className="w-4 h-4" />
             1300 302 398
+          </a>
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              if (isHome) {
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                setTimeout(() => document.querySelector<HTMLInputElement>('#contact input[name="name"]')?.focus(), 600);
+              } else {
+                window.location.href = "/#contact";
+              }
+            }}
+            className="bg-secondary text-secondary-foreground px-5 py-2 rounded-lg font-heading font-semibold text-sm hover:opacity-90 transition-opacity"
+          >
+            Get a Free Quote
           </a>
         </div>
 
@@ -124,8 +139,24 @@ const Navbar = () => {
               )
             )}
             <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+                if (isHome) {
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                  setTimeout(() => document.querySelector<HTMLInputElement>('#contact input[name="name"]')?.focus(), 600);
+                } else {
+                  window.location.href = "/#contact";
+                }
+              }}
+              className="flex items-center justify-center bg-secondary text-secondary-foreground px-4 py-3 rounded-lg font-heading font-semibold"
+            >
+              Get a Free Quote
+            </a>
+            <a
               href="tel:1300302398"
-              className="flex items-center gap-2 bg-secondary text-secondary-foreground px-4 py-3 rounded-lg font-medium justify-center"
+              className="flex items-center gap-2 text-foreground px-4 py-3 rounded-lg font-medium justify-center border border-border"
             >
               <Phone className="w-4 h-4" />
               1300 302 398
