@@ -1,4 +1,4 @@
-import heroImg from "@/assets/hero-tennis.jpg";
+import heroImg from "@/assets/hero-drone.jpg";
 import { Phone } from "lucide-react";
 
 const HeroSection = () => {
