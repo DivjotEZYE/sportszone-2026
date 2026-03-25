@@ -1,16 +1,53 @@
-import heroImg from "@/assets/hero-drone.jpg";
+import { useState, useEffect, useCallback } from "react";
 import { Phone } from "lucide-react";
+import heroDrone from "@/assets/hero-drone.jpg";
+import heroTennis from "@/assets/gallery-tennis-real1.jpg";
+import heroBowling from "@/assets/gallery-bowling-real1.jpg";
+import heroHardcourt from "@/assets/gallery-hardcourt-real1.jpg";
+import heroResurfacing from "@/assets/gallery-resurfacing-real1.jpg";
+
+const images = [heroDrone, heroTennis, heroBowling, heroHardcourt, heroResurfacing];
 
 const HeroSection = () => {
+  const [current, setCurrent] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  const advance = useCallback(() => {
+    setFade(false);
+    setTimeout(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+      setFade(true);
+    }, 600);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(advance, 5000);
+    return () => clearInterval(timer);
+  }, [advance]);
+
   return (
-    <section id="home" className="relative min-h-[85vh] flex items-end pb-16 md:pb-24">
+    <section id="home" className="relative min-h-[85vh] flex items-end pb-16 md:pb-24 overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={heroImg}
-          alt="Tennis court construction by Sportszone Group"
-          className="w-full h-full object-cover"
+          src={images[current]}
+          alt="Sports surface project by Sportszone Group"
+          className={`w-full h-full object-cover transition-opacity duration-700 ${fade ? "opacity-100" : "opacity-0"}`}
         />
         <div className="absolute inset-0 hero-overlay" />
+      </div>
+
+      {/* Progress dots */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => { setFade(false); setTimeout(() => { setCurrent(i); setFade(true); }, 400); }}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              i === current ? "w-8 bg-secondary" : "w-3 bg-primary-foreground/40 hover:bg-primary-foreground/60"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
       </div>
 
       <div className="relative container mx-auto px-4 pt-24">
