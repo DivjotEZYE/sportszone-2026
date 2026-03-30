@@ -9,6 +9,7 @@ const navItems = [
   { label: "Gallery", href: "/#gallery" },
   { label: "About", href: "/#about" },
   { label: "Reviews", href: "/#testimonials" },
+  { label: "Care Info", href: "/care-information" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -55,7 +56,7 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) =>
-            isHome ? (
+            item.href.startsWith("/#") && isHome ? (
               <a
                 key={item.label}
                 href={item.href.replace("/", "")}
@@ -73,7 +74,9 @@ const Navbar = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                className="text-sm font-medium text-foreground transition-colors hover:text-primary"
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  !item.href.startsWith("/#") && !scrolled && isHome ? "text-primary-foreground/90" : scrolled || !isHome ? "text-foreground" : "text-primary-foreground/90"
+                }`}
               >
                 {item.label}
               </Link>
