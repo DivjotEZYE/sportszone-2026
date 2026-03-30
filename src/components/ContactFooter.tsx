@@ -150,6 +150,25 @@ const ContactFooter = () => {
         </div>
       </section>
 
+      {/* Tagline & Partner Logos */}
+      <section className="bg-muted py-14">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">
+            Creating safe, fun sports areas for everyone
+          </h3>
+          <p className="text-muted-foreground mb-8 text-sm">Trusted by industry leaders & accredited partners</p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-70">
+            {["SAPIA", "Polytan", "Tennis Australia", "TigerTurf", "APT Asia Pacific", "Grassports", "Laykold", "FIFA Quality"].map((name) => (
+              <div key={name} className="flex flex-col items-center gap-1">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-card border border-border flex items-center justify-center">
+                  <span className="text-[10px] md:text-xs font-semibold text-muted-foreground text-center leading-tight px-1">{name}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <footer className="bg-foreground py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
