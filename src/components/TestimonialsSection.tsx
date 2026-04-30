@@ -9,13 +9,13 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-20 bg-muted/30">
+    <section id="testimonials" className="py-24 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
-          <div>
-            <p className="text-sm font-medium text-primary uppercase tracking-wider mb-2">Testimonials</p>
-            <h2 className="text-2xl md:text-4xl font-heading font-bold text-foreground">
-              What Our Clients Say
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+          <div className="max-w-xl">
+            <p className="text-xs font-medium text-primary uppercase tracking-[0.2em] mb-4">Testimonials</p>
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground tracking-tight leading-[1.05]">
+              What our clients say
             </h2>
           </div>
           <div className="flex items-center gap-3 bg-card border border-border rounded-lg px-4 py-3">

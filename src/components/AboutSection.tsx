@@ -10,14 +10,15 @@ const highlights = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-muted/50">
+    <section id="about" className="py-24 md:py-32 bg-muted/50">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 className="text-2xl md:text-4xl font-heading font-bold text-foreground mb-4">
-              About Sportszone Group
+            <p className="text-xs font-medium text-primary uppercase tracking-[0.2em] mb-4">About</p>
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground tracking-tight leading-[1.05] mb-6">
+              25 years of building Australia's sports surfaces
             </h2>
-            <p className="text-muted-foreground text-base leading-relaxed mb-6">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8">
               We've been building sports surfaces across Australia for over 25 years. From backyard tennis courts to Olympic venues, we handle every stage — design, earthworks, drainage, surfacing and line marking.
             </p>
             <ul className="space-y-2 mb-6">

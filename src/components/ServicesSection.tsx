@@ -19,18 +19,19 @@ export { services };
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4">
-        <div className="mb-12">
-          <h2 className="text-2xl md:text-4xl font-heading font-bold text-foreground">
-            What We Do
+        <div className="mb-16 max-w-2xl">
+          <p className="text-xs font-medium text-primary uppercase tracking-[0.2em] mb-4">Services</p>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground tracking-tight leading-[1.05]">
+            What we do
           </h2>
-          <p className="text-muted-foreground mt-2 max-w-lg">
+          <p className="text-muted-foreground mt-5 text-base md:text-lg leading-relaxed">
             We build and resurface sports courts and synthetic turf areas across Australia.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
             <Link
               key={service.slug}

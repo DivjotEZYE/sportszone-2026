@@ -40,13 +40,14 @@ const GallerySection = () => {
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="gallery" className="py-20 bg-muted/50">
+    <section id="gallery" className="py-24 md:py-32 bg-muted/50">
       <div className="container mx-auto px-4">
-        <div className="mb-10">
-          <h2 className="text-2xl md:text-4xl font-heading font-bold text-foreground">
-            Recent Projects
+        <div className="mb-12 max-w-2xl">
+          <p className="text-xs font-medium text-primary uppercase tracking-[0.2em] mb-4">Portfolio</p>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground tracking-tight leading-[1.05]">
+            Recent projects
           </h2>
-          <p className="text-muted-foreground mt-2">
+          <p className="text-muted-foreground mt-5 text-base md:text-lg leading-relaxed">
             Real work from real sites — across Australia.
           </p>
         </div>
