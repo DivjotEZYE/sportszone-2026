@@ -176,13 +176,28 @@ const ContactFooter = () => {
             Creating safe, fun sports areas for everyone
           </h3>
           <p className="text-muted-foreground mb-8 text-sm">Trusted by industry leaders & accredited partners</p>
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+          {/* Mobile: continuous marquee */}
+          <div className="md:hidden relative overflow-hidden partner-marquee-mask">
+            <div className="flex gap-6 animate-partner-marquee w-max">
+              {[...partners, ...partners].map((p, i) => (
+                <div key={`${p.name}-${i}`} className="flex flex-col items-center gap-2 shrink-0">
+                  <div className="w-20 h-20 rounded-full bg-card border border-border flex items-center justify-center p-3 grayscale opacity-80">
+                    <img src={p.logo} alt={`${p.name} logo`} loading="lazy" width={512} height={512} className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-[10px] text-muted-foreground">{p.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: static grid */}
+          <div className="hidden md:flex flex-wrap items-center justify-center gap-10">
             {partners.map((p) => (
               <div key={p.name} className="flex flex-col items-center gap-2">
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-card border border-border flex items-center justify-center p-3 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100">
+                <div className="w-24 h-24 rounded-full bg-card border border-border flex items-center justify-center p-3 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100">
                   <img src={p.logo} alt={`${p.name} logo`} loading="lazy" width={512} height={512} className="w-full h-full object-contain" />
                 </div>
-                <span className="text-[10px] md:text-xs text-muted-foreground">{p.name}</span>
+                <span className="text-xs text-muted-foreground">{p.name}</span>
               </div>
             ))}
           </div>
