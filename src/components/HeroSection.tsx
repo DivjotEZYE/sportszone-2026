@@ -51,11 +51,14 @@ const HeroSection = () => {
       </div>
 
       <div className="relative container mx-auto px-4 pt-24">
-        <div className="max-w-xl">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.15] mb-5">
+        <div className="max-w-2xl">
+          <p className="text-xs md:text-sm font-medium text-secondary uppercase tracking-[0.2em] mb-5">
+            Sydney · Est. 2000
+          </p>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground leading-[1.02] tracking-tight mb-6">
             Tennis Courts, Sports Surfaces & Synthetic Turf
           </h1>
-          <p className="text-base md:text-lg text-primary-foreground/80 mb-8 max-w-md">
+          <p className="text-base md:text-lg text-primary-foreground/75 mb-10 max-w-lg leading-relaxed">
             Sydney-based builders of tennis courts, bowling greens, playgrounds and synthetic turf. Servicing Australia since 2000.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
