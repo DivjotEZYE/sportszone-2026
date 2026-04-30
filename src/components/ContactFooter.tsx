@@ -4,10 +4,29 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import logo from "@/assets/sportszone-logo-white.png";
+import partnerSapia from "@/assets/partner-sapia.png";
+import partnerPolytan from "@/assets/partner-polytan.png";
+import partnerTennisAU from "@/assets/partner-tennis-australia.png";
+import partnerTigerturf from "@/assets/partner-tigerturf.png";
+import partnerApt from "@/assets/partner-apt.png";
+import partnerGrassports from "@/assets/partner-grassports.png";
+import partnerLaykold from "@/assets/partner-laykold.png";
+import partnerFifa from "@/assets/partner-fifa-quality.png";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+
+const partners = [
+  { name: "SAPIA", logo: partnerSapia },
+  { name: "Polytan", logo: partnerPolytan },
+  { name: "Tennis Australia", logo: partnerTennisAU },
+  { name: "TigerTurf", logo: partnerTigerturf },
+  { name: "APT Asia Pacific", logo: partnerApt },
+  { name: "Grassports", logo: partnerGrassports },
+  { name: "Laykold", logo: partnerLaykold },
+  { name: "FIFA Quality", logo: partnerFifa },
+];
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -157,12 +176,13 @@ const ContactFooter = () => {
             Creating safe, fun sports areas for everyone
           </h3>
           <p className="text-muted-foreground mb-8 text-sm">Trusted by industry leaders & accredited partners</p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-70">
-            {["SAPIA", "Polytan", "Tennis Australia", "TigerTurf", "APT Asia Pacific", "Grassports", "Laykold", "FIFA Quality"].map((name) => (
-              <div key={name} className="flex flex-col items-center gap-1">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-card border border-border flex items-center justify-center">
-                  <span className="text-[10px] md:text-xs font-semibold text-muted-foreground text-center leading-tight px-1">{name}</span>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+            {partners.map((p) => (
+              <div key={p.name} className="flex flex-col items-center gap-2">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-card border border-border flex items-center justify-center p-3 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100">
+                  <img src={p.logo} alt={`${p.name} logo`} loading="lazy" width={512} height={512} className="w-full h-full object-contain" />
                 </div>
+                <span className="text-[10px] md:text-xs text-muted-foreground">{p.name}</span>
               </div>
             ))}
           </div>
