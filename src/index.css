@@ -117,4 +117,22 @@
   .card-shadow-hover {
     box-shadow: var(--shadow-card-hover);
   }
+
+  .partner-marquee-mask {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  @keyframes partner-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .animate-partner-marquee {
+    animation: partner-marquee 30s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-partner-marquee { animation: none; }
+  }
 }
