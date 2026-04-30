@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import ContactFooter from "@/components/ContactFooter";
 import { Phone } from "lucide-react";
+import { serviceSEO } from "@/data/serviceContent";
 
 import tennisImg from "@/assets/service-tennis.jpg";
 import hardcourtImg from "@/assets/service-hardcourt.jpg";
