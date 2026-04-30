@@ -33,6 +33,8 @@ const Navbar = () => {
     }
   };
 
+  const overHero = !scrolled && isHome;
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -45,16 +47,22 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="Sportszone Group" className="h-10 w-auto" />
           <div>
-            <span className={`font-heading font-bold text-base leading-tight block ${scrolled || !isHome ? "text-foreground" : "text-primary-foreground"}`}>
+            <span className={`font-heading font-bold text-base leading-tight block ${overHero ? "text-primary-foreground" : "text-foreground"}`}>
               Sportszone
             </span>
-            <span className={`text-[11px] leading-tight block ${scrolled || !isHome ? "text-muted-foreground" : "text-primary-foreground/70"}`}>
+            <span className={`text-[11px] leading-tight block ${overHero ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
               Group Pty Ltd
             </span>
           </div>
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div
+          className={`hidden md:flex items-center gap-1 transition-all duration-300 ${
+            overHero
+              ? "bg-background/10 backdrop-blur-md border border-primary-foreground/25 rounded-full px-2 py-1.5 shadow-lg"
+              : ""
+          }`}
+        >
           {navItems.map((item) =>
             item.href.startsWith("/#") && isHome ? (
               <a
@@ -64,8 +72,10 @@ const Navbar = () => {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  scrolled ? "text-foreground" : "text-primary-foreground/90"
+                className={`text-sm font-medium transition-colors px-3 py-1.5 rounded-full ${
+                  overHero
+                    ? "text-primary-foreground hover:bg-primary-foreground/10"
+                    : "text-foreground hover:text-primary"
                 }`}
               >
                 {item.label}
@@ -74,8 +84,10 @@ const Navbar = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  !item.href.startsWith("/#") && !scrolled && isHome ? "text-primary-foreground/90" : scrolled || !isHome ? "text-foreground" : "text-primary-foreground/90"
+                className={`text-sm font-medium transition-colors px-3 py-1.5 rounded-full ${
+                  overHero
+                    ? "text-primary-foreground hover:bg-primary-foreground/10"
+                    : "text-foreground hover:text-primary"
                 }`}
               >
                 {item.label}
@@ -84,7 +96,11 @@ const Navbar = () => {
           )}
           <a
             href="tel:1300302398"
-            className={`flex items-center gap-2 text-sm font-medium transition-colors ${scrolled || !isHome ? "text-foreground hover:text-primary" : "text-primary-foreground/90 hover:text-primary-foreground"}`}
+            className={`hidden lg:flex items-center gap-2 text-sm font-medium px-3 py-1.5 rounded-full transition-colors ${
+              overHero
+                ? "text-primary-foreground hover:bg-primary-foreground/10"
+                : "text-foreground hover:text-primary"
+            }`}
           >
             <Phone className="w-4 h-4" />
             1300 302 398
@@ -100,7 +116,7 @@ const Navbar = () => {
                 window.location.href = "/#contact";
               }
             }}
-            className="bg-secondary text-secondary-foreground px-5 py-2 rounded-lg font-heading font-semibold text-sm hover:scale-105 hover:shadow-lg transition-all duration-200 shadow-[0_0_15px_hsla(45,80%,55%,0.4)]"
+            className="ml-1 bg-secondary text-secondary-foreground px-4 py-2 rounded-full font-heading font-semibold text-sm border border-secondary/60 hover:scale-105 hover:shadow-lg transition-all duration-200"
           >
             Get a Free Quote
           </a>
@@ -108,7 +124,11 @@ const Navbar = () => {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`md:hidden p-2 ${scrolled || !isHome ? "text-foreground" : "text-primary-foreground"}`}
+          className={`md:hidden p-2 rounded-full border transition-colors ${
+            overHero
+              ? "text-primary-foreground border-primary-foreground/30 bg-background/10 backdrop-blur-md"
+              : "text-foreground border-border"
+          }`}
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
