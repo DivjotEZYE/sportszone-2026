@@ -90,6 +90,66 @@ const serviceData: Record<string, {
 const ServicePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const service = slug ? serviceData[slug] : null;
+  const seo = slug ? serviceSEO[slug] : null;
+
+  useEffect(() => {
+    if (!service || !seo) return;
+    document.title = seo.metaTitle;
+
+    const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", content);
+    };
+
+    setMeta("description", seo.metaDescription);
+    setMeta("keywords", seo.keywords.join(", "));
+    setMeta("og:title", seo.metaTitle, "property");
+    setMeta("og:description", seo.metaDescription, "property");
+    setMeta("og:type", "article", "property");
+
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = `${window.location.origin}/services/${slug}`;
+
+    const ldId = "service-jsonld";
+    document.getElementById(ldId)?.remove();
+    const ld = document.createElement("script");
+    ld.type = "application/ld+json";
+    ld.id = ldId;
+    ld.textContent = JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: service.title,
+        description: seo.metaDescription,
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Sportszone Group",
+          telephone: "+61-1300-302-398",
+          areaServed: "AU",
+        },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: seo.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: { "@type": "Answer", text: f.answer },
+        })),
+      },
+    ]);
+    document.head.appendChild(ld);
+  }, [slug, service, seo]);
 
   if (!service) {
     return (
@@ -124,7 +184,7 @@ const ServicePage = () => {
       </section>
 
       {/* Content */}
-      <section className="py-16 bg-background">
+      <article className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <p className="text-foreground text-lg leading-relaxed mb-8">{service.intro}</p>
@@ -134,7 +194,7 @@ const ServicePage = () => {
             ))}
 
             <div className="mt-10 bg-muted/50 rounded-lg p-6 border border-border">
-              <h3 className="font-heading font-semibold text-foreground mb-3">What's included</h3>
+              <h2 className="font-heading font-semibold text-foreground mb-3 text-lg">What's included</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {service.includes.map((item) => (
                   <li key={item} className="text-sm text-foreground flex items-start gap-2">
@@ -145,7 +205,44 @@ const ServicePage = () => {
               </ul>
             </div>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-3">
+            {seo && (
+              <div className="mt-16 space-y-12">
+                <p className="text-foreground text-base md:text-lg leading-relaxed">
+                  {seo.longIntro}
+                </p>
+
+                {seo.sections.map((sec) => (
+                  <section key={sec.heading}>
+                    <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground tracking-tight leading-[1.15] mb-4">
+                      {sec.heading}
+                    </h2>
+                    <p className="text-muted-foreground leading-relaxed text-base">
+                      {sec.body}
+                    </p>
+                  </section>
+                ))}
+
+                <section>
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground tracking-tight leading-[1.15] mb-6">
+                    Frequently asked questions
+                  </h2>
+                  <div className="space-y-6">
+                    {seo.faqs.map((f) => (
+                      <div key={f.question} className="border-l-2 border-primary pl-5">
+                        <h3 className="font-heading font-semibold text-foreground mb-2">
+                          {f.question}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          {f.answer}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              </div>
+            )}
+
+            <div className="mt-12 flex flex-col sm:flex-row gap-3">
               <a
                 href="#contact"
                 className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-3 rounded-lg font-heading font-semibold text-sm hover:opacity-90 transition-opacity"
@@ -166,7 +263,7 @@ const ServicePage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </article>
 
       <ContactFooter />
     </div>
