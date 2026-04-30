@@ -54,14 +54,15 @@ const ContactFooter = () => {
 
   return (
     <>
-      <section id="contact" className="py-24 bg-primary">
+      <section id="contact" className="py-24 md:py-32 bg-primary">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground mb-4">
-                Ready to Start Your Project?
+            <div className="text-center mb-16 max-w-2xl mx-auto">
+              <p className="text-xs font-medium text-secondary uppercase tracking-[0.2em] mb-4">Get in touch</p>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground tracking-tight leading-[1.05] mb-5">
+                Ready to start your project?
               </h2>
-              <p className="text-primary-foreground/70 text-lg max-w-lg mx-auto">
+              <p className="text-primary-foreground/70 text-base md:text-lg leading-relaxed">
                 Get in touch for a free consultation and quote. We'd love to hear about your next project.
               </p>
             </div>
