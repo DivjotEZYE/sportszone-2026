@@ -43,8 +43,8 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-3 px-4">
-        <Link to="/" className="flex items-center gap-2">
+      <div className="container mx-auto relative flex items-center justify-between py-3 px-4">
+        <Link to="/" className="flex items-center gap-2 relative z-10">
           <img src={logo} alt="Sportszone Group" className="h-10 w-auto" />
           <div>
             <span className={`font-heading font-bold text-base leading-tight block ${overHero ? "text-primary-foreground" : "text-foreground"}`}>
@@ -56,11 +56,12 @@ const Navbar = () => {
           </div>
         </Link>
 
+        {/* Centered nav pill */}
         <div
-          className={`hidden md:flex items-center gap-1 transition-all duration-300 ${
+          className={`hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2 transition-all duration-300 ${
             overHero
               ? "bg-background/10 backdrop-blur-md border border-primary-foreground/25 rounded-full px-2 py-1.5 shadow-lg"
-              : ""
+              : "bg-muted/60 border border-border rounded-full px-2 py-1.5"
           }`}
         >
           {navItems.map((item) =>
@@ -75,7 +76,7 @@ const Navbar = () => {
                 className={`text-sm font-medium transition-colors px-3 py-1.5 rounded-full ${
                   overHero
                     ? "text-primary-foreground hover:bg-primary-foreground/10"
-                    : "text-foreground hover:text-primary"
+                    : "text-foreground hover:bg-background"
                 }`}
               >
                 {item.label}
@@ -87,18 +88,22 @@ const Navbar = () => {
                 className={`text-sm font-medium transition-colors px-3 py-1.5 rounded-full ${
                   overHero
                     ? "text-primary-foreground hover:bg-primary-foreground/10"
-                    : "text-foreground hover:text-primary"
+                    : "text-foreground hover:bg-background"
                 }`}
               >
                 {item.label}
               </Link>
             )
           )}
+        </div>
+
+        {/* Right side: phone + CTA */}
+        <div className="hidden md:flex items-center gap-3 relative z-10">
           <a
             href="tel:1300302398"
-            className={`hidden lg:flex items-center gap-2 text-sm font-medium px-3 py-1.5 rounded-full transition-colors ${
+            className={`hidden lg:flex items-center gap-2 text-sm font-medium transition-colors ${
               overHero
-                ? "text-primary-foreground hover:bg-primary-foreground/10"
+                ? "text-primary-foreground/90 hover:text-primary-foreground"
                 : "text-foreground hover:text-primary"
             }`}
           >
@@ -116,7 +121,7 @@ const Navbar = () => {
                 window.location.href = "/#contact";
               }
             }}
-            className="ml-1 bg-secondary text-secondary-foreground px-4 py-2 rounded-full font-heading font-semibold text-sm border border-secondary/60 hover:scale-105 hover:shadow-lg transition-all duration-200"
+            className="bg-secondary text-secondary-foreground px-4 py-2 rounded-full font-heading font-semibold text-sm border border-secondary/60 hover:scale-105 hover:shadow-lg transition-all duration-200"
           >
             Get a Free Quote
           </a>
