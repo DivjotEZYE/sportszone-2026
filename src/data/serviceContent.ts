@@ -216,53 +216,6 @@ export const serviceSEO: Record<string, ServiceSEOContent> = {
     ],
   },
 
-  "residential-turf": {
-    metaTitle: "Synthetic Turf Sydney | Backyard, Pet & Pool Lawn Installation",
-    metaDescription:
-      "Premium synthetic grass installation across Sydney. UV-stable, pet-friendly turf for backyards, courtyards and pool surrounds. 8-year warranty. Free quote.",
-    keywords: [
-      "synthetic turf Sydney",
-      "synthetic grass installation",
-      "artificial lawn Sydney",
-      "pet friendly synthetic turf",
-      "backyard fake grass",
-      "synthetic grass cost per m2",
-    ],
-    longIntro:
-      "Synthetic turf is the simplest way to get a lush, low-maintenance lawn in Sydney's climate. No watering, no mowing, no patchy spots from shade or pets. Sportszone Group supplies and installs premium synthetic grass for backyards, courtyards, pool surrounds and pet areas — with proper base preparation that's the difference between a lawn that lasts a decade and one that ripples after a year.",
-    sections: [
-      {
-        heading: "Why synthetic turf works in Sydney",
-        body: "Sydney's mix of harsh sun, restricted water and shaded inner-city blocks makes natural lawns hard work. Modern synthetic turf looks indistinguishable from real grass at arm's length, stays green year-round and drains faster than natural soil. Perfect for time-poor families and small yards that get heavy use.",
-      },
-      {
-        heading: "Pet-friendly turf",
-        body: "Our pet-friendly turf systems use antimicrobial backing and a free-draining infill that lets urine flush straight through. We can also include an odour-control sub-layer and integrated drainage. Pets can't dig it up and your lawn stays green even with high traffic.",
-      },
-      {
-        heading: "Proper base preparation",
-        body: "Most synthetic lawn problems come from poor base prep. We excavate to depth, install a geotextile, lay a graded crushed-rock base, compact in layers, then screed to a perfect finish before the turf is laid. This is what stops sinking, ponding and rippling down the track.",
-      },
-      {
-        heading: "Cost of synthetic grass installation",
-        body: "Fully installed synthetic turf in Sydney typically ranges from $90 to $150 per square metre depending on turf grade, base depth, drainage and edging. Cheaper installs almost always cut corners on the base — and you'll see it within 12 months.",
-      },
-    ],
-    faqs: [
-      {
-        question: "How long does synthetic turf last?",
-        answer:
-          "A premium synthetic lawn installed on a properly prepared base will last 10–15 years. Our turf products come with manufacturer warranties of up to 10 years.",
-      },
-      {
-        question: "Is synthetic turf safe for kids and pets?",
-        answer:
-          "Yes — modern synthetic turf is non-toxic, lead-free and includes antimicrobial backing. It's softer than concrete or pavers and stays cooler than people expect when properly infilled.",
-      },
-    ],
-  },
-
-  "major-projects": {
     metaTitle: "Major Sports Facility Construction | Council & Commercial Projects",
     metaDescription:
       "Large-scale sports facility construction across Australia. Multi-court complexes, athletics tracks, sports fields. Olympic-grade experience since 2000.",
