@@ -1,16 +1,13 @@
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Facebook } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
-import logo from "@/assets/sportszone-logo-white.png";
+import logo from "@/assets/sportszone-logo.jpg";
 import partnerSapia from "@/assets/partner-sapia.png";
 import partnerPolytan from "@/assets/partner-polytan.png";
 import partnerTennisAU from "@/assets/partner-tennis-australia.png";
-import partnerTigerturf from "@/assets/partner-tigerturf.png";
 import partnerApt from "@/assets/partner-apt.png";
-import partnerGrassports from "@/assets/partner-grassports.png";
-import partnerLaykold from "@/assets/partner-laykold.png";
 import partnerFifa from "@/assets/partner-fifa-quality.png";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,10 +18,7 @@ const partners = [
   { name: "SAPIA", logo: partnerSapia },
   { name: "Polytan", logo: partnerPolytan },
   { name: "Tennis Australia", logo: partnerTennisAU },
-  { name: "TigerTurf", logo: partnerTigerturf },
   { name: "APT Asia Pacific", logo: partnerApt },
-  { name: "Grassports", logo: partnerGrassports },
-  { name: "Laykold", logo: partnerLaykold },
   { name: "FIFA Quality", logo: partnerFifa },
 ];
 
