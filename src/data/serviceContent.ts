@@ -216,6 +216,7 @@ export const serviceSEO: Record<string, ServiceSEOContent> = {
     ],
   },
 
+  "major-projects": {
     metaTitle: "Major Sports Facility Construction | Council & Commercial Projects",
     metaDescription:
       "Large-scale sports facility construction across Australia. Multi-court complexes, athletics tracks, sports fields. Olympic-grade experience since 2000.",
