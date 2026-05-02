@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import ContactFooter from "@/components/ContactFooter";
+import QuoteCTA from "@/components/QuoteCTA";
 import { Phone } from "lucide-react";
 import { serviceSEO } from "@/data/serviceContent";
 
@@ -9,7 +10,7 @@ import tennisImg from "@/assets/service-tennis.jpg";
 import hardcourtImg from "@/assets/service-hardcourt.jpg";
 import educationImg from "@/assets/service-education.jpg";
 import bowlingImg from "@/assets/service-bowling.jpg";
-import residentialImg from "@/assets/service-residential.jpg";
+
 import majorImg from "@/assets/service-major.jpg";
 
 const serviceData: Record<string, {
@@ -62,17 +63,6 @@ const serviceData: Record<string, {
       "Our greens are approved by Bowls Australia and used by clubs at every level.",
     ],
     includes: ["Dry Max Pro / Masters Pro systems", "Base preparation & regrading", "Drainage upgrades", "Ditch & bank installation", "Lighting", "Surrounds & pathways"],
-  },
-  "residential-turf": {
-    title: "Residential Synthetic Turf",
-    hero: residentialImg,
-    intro: "Quality synthetic turf for backyards, courtyards, pet areas and pool surrounds. We supply and install — no subcontractors.",
-    details: [
-      "Our turf products look and feel like real grass. They're UV stable, pet-friendly and drain well.",
-      "We prepare the base properly so the turf sits flat and drains correctly. This is where cheap installs go wrong.",
-      "Popular for Sydney homes where natural grass struggles due to shade, foot traffic or water restrictions.",
-    ],
-    includes: ["Site preparation & base work", "Quality synthetic turf supply", "Professional installation", "Infill & brushing", "Garden edging & borders", "Pet-friendly options"],
   },
   "major-projects": {
     title: "Major & Commercial Projects",
@@ -265,6 +255,7 @@ const ServicePage = () => {
         </div>
       </article>
 
+      <QuoteCTA title={`Get a quote for your ${service.title.toLowerCase()}`} context={service.title} />
       <ContactFooter />
     </div>
   );

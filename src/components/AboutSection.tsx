@@ -39,16 +39,16 @@ const AboutSection = () => {
 
           <div className="space-y-6">
             {/* Founder photo */}
-            <div className="flex items-center gap-5">
+            <div className="flex flex-col sm:flex-row gap-6 items-start">
               <img
                 src={founderImg}
                 alt="Craig — Founder of Sportszone Group"
-                className="w-28 h-36 object-cover rounded-lg"
+                className="w-full sm:w-64 h-80 sm:h-72 object-cover rounded-xl flex-shrink-0"
               />
-              <div>
-                <div className="font-heading font-bold text-foreground text-lg">Craig</div>
+              <div className="pt-1">
+                <div className="font-heading font-bold text-foreground text-xl">Craig</div>
                 <div className="text-muted-foreground text-sm">Founder & Director</div>
-                <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
                   Over 25 years building sports surfaces — from backyard courts to Olympic venues.
                 </p>
               </div>

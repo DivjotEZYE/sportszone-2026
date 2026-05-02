@@ -1,16 +1,13 @@
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Facebook } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
-import logo from "@/assets/sportszone-logo-white.png";
+import logo from "@/assets/sportszone-logo.jpg";
 import partnerSapia from "@/assets/partner-sapia.png";
 import partnerPolytan from "@/assets/partner-polytan.png";
 import partnerTennisAU from "@/assets/partner-tennis-australia.png";
-import partnerTigerturf from "@/assets/partner-tigerturf.png";
 import partnerApt from "@/assets/partner-apt.png";
-import partnerGrassports from "@/assets/partner-grassports.png";
-import partnerLaykold from "@/assets/partner-laykold.png";
 import partnerFifa from "@/assets/partner-fifa-quality.png";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,10 +18,7 @@ const partners = [
   { name: "SAPIA", logo: partnerSapia },
   { name: "Polytan", logo: partnerPolytan },
   { name: "Tennis Australia", logo: partnerTennisAU },
-  { name: "TigerTurf", logo: partnerTigerturf },
   { name: "APT Asia Pacific", logo: partnerApt },
-  { name: "Grassports", logo: partnerGrassports },
-  { name: "Laykold", logo: partnerLaykold },
   { name: "FIFA Quality", logo: partnerFifa },
 ];
 
@@ -208,17 +202,28 @@ const ContactFooter = () => {
       <footer className="bg-primary py-12 border-t border-primary-foreground/10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-2">
-              <img src={logo} alt="Sportszone Group" className="h-10 w-auto" />
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Sportszone Group" className="h-12 w-auto rounded" />
               <span className="font-heading font-bold text-primary-foreground">Sportszone Group</span>
             </div>
             <div className="flex items-center gap-2 text-primary-foreground/70 text-sm">
               <MapPin className="w-4 h-4" />
               Sydney NSW, Australia
             </div>
-            <p className="text-primary-foreground/50 text-sm">
-              © {new Date().getFullYear()} Sportszone Group Pty Ltd. All rights reserved.
-            </p>
+            <div className="flex items-center gap-5">
+              <a
+                href="https://www.facebook.com/sportszonegroup"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sportszone Group on Facebook"
+                className="flex items-center justify-center w-10 h-10 rounded-full border border-primary-foreground/20 text-primary-foreground/80 hover:text-secondary hover:border-secondary transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <p className="text-primary-foreground/50 text-sm">
+                © {new Date().getFullYear()} Sportszone Group Pty Ltd
+              </p>
+            </div>
           </div>
         </div>
       </footer>

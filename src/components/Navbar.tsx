@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/sportszone-logo-white.png";
+import logo from "@/assets/sportszone-logo.jpg";
 
 const navItems = [
   { label: "Home", href: "/#home" },
@@ -45,7 +45,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto relative flex items-center justify-between py-3 px-4">
         <Link to="/" className="flex items-center gap-2 relative z-10">
-          <img src={logo} alt="Sportszone Group" className="h-10 w-auto" />
+          <img src={logo} alt="Sportszone Group" className="h-11 w-11 rounded object-cover" />
           <div>
             <span className={`font-heading font-bold text-base leading-tight block ${overHero ? "text-primary-foreground" : "text-foreground"}`}>
               Sportszone

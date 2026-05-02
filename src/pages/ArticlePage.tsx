@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import ContactFooter from "@/components/ContactFooter";
+import QuoteCTA from "@/components/QuoteCTA";
 import { articles } from "@/data/articles";
 import { ArrowLeft, ArrowRight, Calendar } from "lucide-react";
 
@@ -168,6 +169,7 @@ const ArticlePage = () => {
         </div>
       </section>
 
+      <QuoteCTA title="Talk to us about your project" context={article.title} />
       <ContactFooter />
     </div>
   );
