@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import ContactFooter from "@/components/ContactFooter";
+import QuoteCTA from "@/components/QuoteCTA";
 import { Phone } from "lucide-react";
 import { serviceSEO } from "@/data/serviceContent";
 
@@ -254,6 +255,7 @@ const ServicePage = () => {
         </div>
       </article>
 
+      <QuoteCTA title={`Get a quote for your ${service.title.toLowerCase()}`} context={service.title} />
       <ContactFooter />
     </div>
   );
