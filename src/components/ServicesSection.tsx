@@ -3,7 +3,6 @@ import tennisImg from "@/assets/service-tennis.jpg";
 import hardcourtImg from "@/assets/service-hardcourt.jpg";
 import educationImg from "@/assets/service-education.jpg";
 import bowlingImg from "@/assets/service-bowling.jpg";
-import residentialImg from "@/assets/service-residential.jpg";
 import majorImg from "@/assets/service-major.jpg";
 
 const services = [
@@ -11,7 +10,6 @@ const services = [
   { slug: "hard-courts", title: "Hard Courts", description: "Rebound Ace acrylic systems for netball, basketball and multi-sport.", image: hardcourtImg },
   { slug: "education", title: "Schools & Education", description: "Synthetic surfaces and playgrounds for schools and universities.", image: educationImg },
   { slug: "bowling-greens", title: "Bowling Greens", description: "Dry Max Pro and Masters Pro synthetic bowling green installations.", image: bowlingImg },
-  { slug: "residential-turf", title: "Residential Turf", description: "Synthetic turf for backyards, gardens and pet areas.", image: residentialImg },
   { slug: "major-projects", title: "Major Projects", description: "Large-scale sports complexes, council projects and commercial builds.", image: majorImg },
 ];
 

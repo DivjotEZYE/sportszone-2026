@@ -202,17 +202,28 @@ const ContactFooter = () => {
       <footer className="bg-primary py-12 border-t border-primary-foreground/10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-2">
-              <img src={logo} alt="Sportszone Group" className="h-10 w-auto" />
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Sportszone Group" className="h-12 w-auto rounded" />
               <span className="font-heading font-bold text-primary-foreground">Sportszone Group</span>
             </div>
             <div className="flex items-center gap-2 text-primary-foreground/70 text-sm">
               <MapPin className="w-4 h-4" />
               Sydney NSW, Australia
             </div>
-            <p className="text-primary-foreground/50 text-sm">
-              © {new Date().getFullYear()} Sportszone Group Pty Ltd. All rights reserved.
-            </p>
+            <div className="flex items-center gap-5">
+              <a
+                href="https://www.facebook.com/sportszonegroup"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sportszone Group on Facebook"
+                className="flex items-center justify-center w-10 h-10 rounded-full border border-primary-foreground/20 text-primary-foreground/80 hover:text-secondary hover:border-secondary transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <p className="text-primary-foreground/50 text-sm">
+                © {new Date().getFullYear()} Sportszone Group Pty Ltd
+              </p>
+            </div>
           </div>
         </div>
       </footer>
