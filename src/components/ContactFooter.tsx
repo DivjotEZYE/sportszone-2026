@@ -166,11 +166,18 @@ const ContactFooter = () => {
 
       {/* Tagline & Partner Logos */}
       <section className="bg-muted py-14">
+        <div className="relative overflow-hidden partner-marquee-mask mb-8">
+          <div className="flex gap-12 animate-partner-marquee w-max">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <h3 key={i} className="font-heading text-2xl md:text-4xl font-bold text-foreground whitespace-nowrap shrink-0">
+                Creating safe, fun sports areas for everyone <span className="text-secondary mx-6">★</span>
+              </h3>
+            ))}
+          </div>
+        </div>
         <div className="container mx-auto px-4 text-center">
-          <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">
-            Creating safe, fun sports areas for everyone
-          </h3>
           <p className="text-muted-foreground mb-8 text-sm">Trusted by industry leaders & accredited partners</p>
+
           {/* Mobile: continuous marquee */}
           <div className="md:hidden relative overflow-hidden partner-marquee-mask">
             <div className="flex gap-6 animate-partner-marquee w-max">
