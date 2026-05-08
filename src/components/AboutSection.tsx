@@ -10,13 +10,18 @@ const highlights = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 md:py-32 bg-muted/50">
+    <section id="about" className="py-24 md:py-36 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="text-xs font-medium text-primary uppercase tracking-[0.2em] mb-4">About</p>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground tracking-tight leading-[1.05] mb-6">
-              25 years of building Australia's sports surfaces
+            <div className="flex items-center gap-3 mb-5">
+              <span className="h-px w-10 bg-primary/40" />
+              <p className="text-[11px] font-medium text-primary uppercase tracking-[0.25em]">
+                04 — About
+              </p>
+            </div>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground tracking-[-0.02em] leading-[0.95] mb-6">
+              25 years building Australia's <span className="italic font-light text-primary">sports surfaces</span>.
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8">
               We've been building sports surfaces across Australia for over 25 years. From backyard tennis courts to Olympic venues, we handle every stage — design, earthworks, drainage, surfacing and line marking.
