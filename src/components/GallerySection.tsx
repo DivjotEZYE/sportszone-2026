@@ -40,16 +40,25 @@ const GallerySection = () => {
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="gallery" className="py-24 md:py-32 bg-muted/50">
+    <section id="gallery" className="py-24 md:py-36 bg-muted/50">
       <div className="container mx-auto px-4">
-        <div className="mb-12 max-w-2xl">
-          <p className="text-xs font-medium text-primary uppercase tracking-[0.2em] mb-4">Portfolio</p>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground tracking-tight leading-[1.05]">
-            Recent projects
-          </h2>
-          <p className="text-muted-foreground mt-5 text-base md:text-lg leading-relaxed">
-            Real work from real sites — across Australia.
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-end mb-12 md:mb-16">
+          <div className="md:col-span-7">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="h-px w-10 bg-primary/40" />
+              <p className="text-[11px] font-medium text-primary uppercase tracking-[0.25em]">
+                02 — Portfolio
+              </p>
+            </div>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground tracking-[-0.02em] leading-[0.95]">
+              Recent <span className="italic font-light text-primary">projects</span>.
+            </h2>
+          </div>
+          <div className="md:col-span-5 md:pb-3">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-md">
+              Real work from real sites — courts, greens, playgrounds and synthetic turf across Australia.
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-wrap gap-2 mb-8">
