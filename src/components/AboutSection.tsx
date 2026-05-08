@@ -43,7 +43,7 @@ const AboutSection = () => {
               <img
                 src={founderImg}
                 alt="Craig — Founder of Sportszone Group"
-                className="w-full sm:w-64 h-80 sm:h-72 object-cover rounded-xl flex-shrink-0"
+                className="w-full sm:w-64 h-96 sm:h-80 object-cover object-top rounded-xl flex-shrink-0"
               />
               <div className="pt-1">
                 <div className="font-heading font-bold text-foreground text-xl">Craig</div>
